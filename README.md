@@ -1,4 +1,4 @@
-# IntrudeAware — Intrusion Video Surveillance & Scene Analysis
+# IntrudeAware — Intrusion Detection, Surveillance & Scene Analysis System
 
 IntrudeAware is a Computer Vision Project for CSE3010. It processes an uploaded video, performs image preprocessing, foreground/motion-based object detection, centroid tracking, optical-flow analysis, and rule-based restricted-zone event detection, then produces an annotated output video and basic analytics.
 
