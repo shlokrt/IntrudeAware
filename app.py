@@ -1,4 +1,4 @@
-"""IntrudeAware Streamlit MVP.
+"""IntrudeAware Streamlit.
 
 Run with:
     streamlit run app.py
@@ -226,7 +226,7 @@ def process_video(
 
 
 st.title("IntrudeAware")
-st.caption("Intelligent Video Surveillance & Scene Analysis — Computer Vision MVP")
+st.caption("Intelligent Video Surveillance & Scene Analysis — Computer Vision ")
 
 with st.sidebar:
     st.header("Processing settings")
@@ -313,7 +313,7 @@ with st.sidebar:
 uploaded = st.file_uploader("Upload a video", type=["mp4", "avi", "mov", "mkv"])
 
 if uploaded is None:
-    st.info("Upload a video to run the IntrudeAware MVP. A short 10–30 second video is ideal for testing.")
+    st.info("Upload a video to run the IntrudeAware . A short 10–30 second video is ideal for testing.")
     st.markdown(
         """
 ### Pipeline
