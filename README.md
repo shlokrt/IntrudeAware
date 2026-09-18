@@ -240,3 +240,12 @@ IntrudeAware can treat the sidebar frame-skip value as a **maximum** interval in
 - on intermediate frames, the existing tracker predicts track positions; if a prediction crosses into the restricted zone, IntrudeAware can trigger an immediate YOLO refresh on that same frame.
 
 The existing tracker, restricted-zone event detector, dashboard, and video overlay APIs are unchanged.
+
+## Author
+
+**[Name: Shlok Khanna]** 
+**[Reg. No.: 24BAI10235]** \
+VITyarthi Project for CSE3010 — Computer Vision  
+[VIT Bhopal University]
+
+GitHub: [@shlokrt](https://github.com/shlokrt)
