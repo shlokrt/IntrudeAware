@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# App data
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.csv
+*.json
+
+# Keep folder structure
+!data/input/.gitkeep
+!data/output/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
