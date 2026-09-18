@@ -1,4 +1,4 @@
-# IntrudeAware — Intelligent Video Surveillance & Scene Analysis
+# IntrudeAware — Intrusion Video Surveillance & Scene Analysis
 
 IntrudeAware is a Computer Vision Project for CSE3010. It processes an uploaded video, performs image preprocessing, foreground/motion-based object detection, centroid tracking, optical-flow analysis, and rule-based restricted-zone event detection, then produces an annotated output video and basic analytics.
 
@@ -237,7 +237,7 @@ IntrudeAware can treat the sidebar frame-skip value as a **maximum** interval in
 - moderate track motion reduces the interval to 2 frames;
 - fast track motion runs YOLO every frame;
 - any active track inside the restricted zone runs YOLO every frame;
-- on intermediate frames, the existing tracker predicts track positions; if a prediction crosses into the restricted zone, IntrudeAware can trigger an immediate YOLO refresh on that same frame.
+- on intermediate frames, the existing tracker predicts track positions; if a prediction crosses into the   restricted zone, IntrudeAware can trigger an immediate YOLO refresh on that same frame.
 
 The existing tracker, restricted-zone event detector, dashboard, and video overlay APIs are unchanged.
 
@@ -245,7 +245,8 @@ The existing tracker, restricted-zone event detector, dashboard, and video overl
 
 **Name: Shlok Khanna** 
 **Reg. No.: 24BAI10235** \
-VITyarthi Project for CSE3010 — Computer Vision  
+VITyarthi Project for CSE3010 - Computer Vision  
 VIT Bhopal University
 
 GitHub: [@shlokrt](https://github.com/shlokrt)
+
