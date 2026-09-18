@@ -243,9 +243,9 @@ The existing tracker, restricted-zone event detector, dashboard, and video overl
 
 ## Author
 
-**[Name: Shlok Khanna]** 
-**[Reg. No.: 24BAI10235]** \
+**Name: Shlok Khanna** 
+**Reg. No.: 24BAI10235** \
 VITyarthi Project for CSE3010 — Computer Vision  
-[VIT Bhopal University]
+VIT Bhopal University
 
 GitHub: [@shlokrt](https://github.com/shlokrt)
