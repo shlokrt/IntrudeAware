@@ -1,12 +1,12 @@
 # IntrudeAware — Intelligent Video Surveillance & Scene Analysis
 
-IntrudeAware is a Computer Vision MVP for CSE3010. It processes an uploaded video, performs image preprocessing, foreground/motion-based object detection, centroid tracking, optical-flow analysis, and rule-based restricted-zone event detection, then produces an annotated output video and basic analytics.
+IntrudeAware is a Computer Vision Project for CSE3010. It processes an uploaded video, performs image preprocessing, foreground/motion-based object detection, centroid tracking, optical-flow analysis, and rule-based restricted-zone event detection, then produces an annotated output video and basic analytics.
 
 ## CSE3010 alignment
 
-The MVP demonstrates concepts appearing in the course syllabus, including preprocessing/filtering, histogram enhancement, edge detection, background subtraction, optical flow, object detection/tracking, and motion analysis. The course also lists object detection/tracking and optical-flow experiments among its indicative practical work.
+This project demonstrates concepts appearing in the course syllabus, including preprocessing/filtering, histogram enhancement, edge detection, background subtraction, optical flow, object detection/tracking, and motion analysis. The course also lists object detection/tracking and optical-flow experiments among its indicative practical work.
 
-## MVP features
+## Features
 
 1. **Image preprocessing**
    - Resize
@@ -139,7 +139,7 @@ The processed video is saved under `data/output/` and displayed in the dashboard
 pytest -q
 ```
 
-## Important MVP note
+## Important note
 
 The core detector intentionally uses classical computer vision: foreground extraction + contours. Semantic labels are added with OpenCV HOG for people and simple, explainable geometry/extent heuristics for other moving blobs. These CAR/BIKE labels are approximate rather than learned predictions. A future version can replace `detection/semantic_labeler.py` with a trained detector such as a YOLO-family model without changing the tracking, event, or visualization layers.
 
