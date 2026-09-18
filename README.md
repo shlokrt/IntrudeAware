@@ -38,6 +38,51 @@ This project demonstrates concepts appearing in the course syllabus, including p
    - Region of interest
    - Analytics dashboard
 
+
+## Visual Demo
+
+The following animated preview shows the main IntrudeAware workflow: configuration, processed-video overlay, restricted-zone event analytics, and processing metadata.
+
+![IntrudeAware demo](docs/images/demo.gif)
+
+### Interface and results
+
+| Application interface | Processed video overlay |
+|---|---|
+| ![IntrudeAware dashboard](docs/images/dashboard.png) | ![IntrudeAware processed video](docs/images/processed_video.png) |
+
+| Restricted-zone event log | Processing metadata |
+|---|---|
+| ![IntrudeAware event log](docs/images/event_log.png) | ![IntrudeAware metadata](docs/images/metadata.png) |
+
+## System Workflow
+
+```mermaid
+flowchart LR
+    A[Upload Video] --> B[Preprocessing]
+    B --> C[YOLO Semantic Detection]
+    C --> D[Centroid Tracking]
+    D --> E[Optical Flow]
+    E --> F[Restricted-Zone Event Detection]
+    F --> G[Annotated Output Video]
+    F --> H[Event Dashboard]
+    C -. adaptive frame skipping .-> C
+```
+
+## Demo Configuration
+
+The demonstrated run uses the Streamlit controls shown in the screenshots:
+
+- YOLO semantic detection: enabled
+- YOLO model: `yolo26n` (Nano)
+- Inference device: CPU
+- Maximum YOLO frame skip: `3`
+- Adaptive YOLO frame skipping: enabled
+- Optical-flow vectors: enabled
+- Tracker association distance: `80`
+
+The processed example contains 455 frames at 30 FPS and reports track-level restricted-zone events with timestamps, frame numbers, track IDs, and `ENTRY`/`EXIT` status.
+
 ## Project structure
 
 ```text
