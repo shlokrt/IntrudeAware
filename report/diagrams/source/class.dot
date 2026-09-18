@@ -1,0 +1,16 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", nodesep=0.35, ranksep=0.55, splines=ortho];
+  node [shape=record, style="filled", fontname="Arial", fontsize=8.7, fillcolor="#F8FAFC", color="#334155"];
+  edge [fontname="Arial", fontsize=8.5, color="#475569", arrowsize=0.7];
+  cfg [label="{YOLOConfig|model\nconfidence\nframe_skip\nadaptive_frame_skip\nvelocity_smoothing_alpha\nrefresh_cooldown_frames}"];
+  det [label="{Detection|bbox\ncentroid\narea\nlabel\nconfidence}"];
+  yolo [label="{YOLOObjectDetector|should_detect()\ndetect()\n_update_velocity_smoothing()\n_adaptive_interval()}"];
+  trk [label="{Track|object_id\nbbox\ncentroid\nlabel\nhistory\ndisappeared\nprediction_age}"];
+  tracker [label="{CentroidTracker|update()\npredict()\ntracks_list()}"];
+  zone [label="{Zone|x1 y1 x2 y2\ncontains()}"];
+  evt [label="{EventDetector|update()\nENTRY / EXIT\nstate retention + cooldown}"];
+  flow [label="{OpticalFlowAnalyzer|update()\nmean magnitude\nlast_vectors}"];
+  stats [label="{ProcessingStats|frame_count\nmax_active_tracks\nmean_flow\nzone_events}"];
+  app [label="{Streamlit App|process_video()\nsidebar controls\ndashboard + CSV\nvideo output}"];
+  cfg -> yolo; yolo -> det; det -> tracker; tracker -> trk [dir=both]; zone -> evt; trk -> evt; flow -> app; stats -> app; yolo -> app; tracker -> app; evt -> app; app -> tracker;
+}

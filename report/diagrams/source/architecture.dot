@@ -1,0 +1,27 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.55, splines=ortho];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=10.5, color="#334155", fillcolor="#F8FAFC", margin="0.16,0.09"];
+  edge [fontname="Arial", fontsize=8.8, color="#475569", arrowsize=0.7];
+  user [label="User\n(Streamlit UI)", fillcolor="#E0F2FE"];
+  input [label="Video Input\nMP4 / AVI / MOV / MKV"];
+  prep [label="Preprocessing\nResize + Gaussian + CLAHE + Canny"];
+  yolo [label="YOLO Semantic Detection\nModel size + device + confidence"];
+  tracker [label="Centroid Tracker\nPersistent IDs + prediction"];
+  motion [label="Motion Analysis\nMOG2 fallback + Lucas-Kanade optical flow"];
+  event [label="Restricted-Zone Event Engine\nENTRY / EXIT + grace + cooldown"];
+  viz [label="Visualization\nZone + labels + trails + flow"];
+  dash [label="Dashboard\nMetrics + event table + CSV"];
+  out [label="Browser-Compatible Output\nH.264 MP4"];
+  user -> input -> prep -> yolo -> tracker -> event;
+  prep -> motion;
+  tracker -> motion [style=dashed, label="track context"];
+  tracker -> viz;
+  event -> viz;
+  motion -> viz;
+  viz -> out;
+  event -> dash;
+  tracker -> dash [style=dashed];
+  motion -> dash [style=dashed];
+  out -> user [label="preview"];
+  dash -> user [label="analytics"];
+}

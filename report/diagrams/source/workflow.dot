@@ -1,0 +1,27 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", nodesep=0.25, ranksep=0.45, splines=polyline, pad=0.15];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=9.5, color="#334155", fillcolor="#F8FAFC", margin="0.12,0.06"];
+  edge [fontname="Arial", fontsize=8.5, color="#475569", arrowsize=0.65];
+  start [label="Start", shape=oval, fillcolor="#DCFCE7"];
+  input [label="Upload video"];
+  settings [label="Configure YOLO\nand restricted zone"];
+  frame [label="Read next frame\n+ preprocess"];
+  due [label="YOLO due?", shape=diamond, fillcolor="#FEF3C7"];
+  detect [label="Run YOLO\nsemantic detections"];
+  predict [label="Predict existing\ntrack positions"];
+  track [label="Tracker\nupdate / predict"];
+  analysis [label="Optical flow +\nzone ENTRY / EXIT"];
+  render [label="Overlay +\nwrite frame"];
+  more [label="More frames?", shape=diamond, fillcolor="#FEF3C7"];
+  output [label="H.264 video +\ndashboard + CSV"];
+  end [label="Complete", shape=oval, fillcolor="#DCFCE7"];
+  start -> input -> settings -> frame -> due;
+  due -> detect [label="yes"];
+  due -> predict [label="no"];
+  detect -> track;
+  predict -> track;
+  track -> analysis -> render -> more;
+  more -> frame [label="yes"];
+  more -> output [label="no"];
+  output -> end;
+}

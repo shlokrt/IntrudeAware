@@ -1,0 +1,19 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.2, nodesep=0.35, ranksep=0.55];
+  node [fontname="Arial", fontsize=10.5, color="#334155"];
+  edge [fontname="Arial", fontsize=8.5, color="#475569", arrowsize=0.7];
+  user [shape=box, style="rounded,filled", fillcolor="#E0F2FE", label="Student / Demonstrator"];
+  operator [shape=box, style="rounded,filled", fillcolor="#E0F2FE", label="Operator"];
+  subgraph cluster_system {
+    label="IntrudeAware"; color="#94A3B8"; style="rounded"; fontname="Arial";
+    use1 [shape=ellipse, label="Upload video"];
+    use2 [shape=ellipse, label="Configure YOLO / zone"];
+    use3 [shape=ellipse, label="Process video"];
+    use4 [shape=ellipse, label="View tracked objects"];
+    use5 [shape=ellipse, label="Review ENTRY / EXIT"];
+    use6 [shape=ellipse, label="Download event CSV"];
+    use7 [shape=ellipse, label="Inspect metrics"];
+  }
+  user -> use1; user -> use2; user -> use3; user -> use4; user -> use5; user -> use6; user -> use7;
+  operator -> use2; operator -> use5; operator -> use7;
+}
