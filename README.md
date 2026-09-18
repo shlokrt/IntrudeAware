@@ -89,6 +89,8 @@ The processed example contains 455 frames at 30 FPS and reports track-level rest
 IntrudeAware/
 ├── app.py
 ├── requirements.txt
+├── output.mp4
+├── demo.mp4
 ├── README.md
 ├── statement.md
 ├── LICENSE
