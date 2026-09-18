@@ -124,6 +124,13 @@ IntrudeAware/
 │   ├── __init__.py
 │   ├── video_utils.py
 │   └── logger.py
+├── report/
+│   ├── diagrams
+│   ├── evidence
+│   ├── figures
+│   ├── IntrudeAware_Final_Report.tex
+│   ├── references.bib
+│   └── README_Latex.md
 ├── tests/
 │   ├── test_preprocessing.py
 │   ├── test_tracking.py
